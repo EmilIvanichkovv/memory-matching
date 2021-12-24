@@ -1,0 +1,57 @@
+
+.login-heading {
+    color: white;
+}
+.box {
+    width: 400px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #191919;
+    text-align: center;
+    
+    
+}
+
+.box input[type = "text"],
+.box input[type = password] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border:2px solid orchid;
+    padding: 14px 10px;
+    width: 250px;
+    outline: none;
+    border-radius: 25px;
+    transition: 0.25s;
+}
+
+.box input[type = "text"]:focus,
+.box input[type = password]:focus {
+    width: 300px;
+    border-color: peachpuff;
+    transition: 0.25s;
+}
+
+.box input[type = "submit"]{
+    border: 0;
+    background: none;
+    color: white;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border:2px solid orchid;
+    padding: 14px 40px;
+    outline: none;
+    border-radius: 25px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box input[type = "submit"]:hover {
+    background: yellowgreen;
+}
