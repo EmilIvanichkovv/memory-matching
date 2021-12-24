@@ -6,11 +6,15 @@
     width: 400px;
     padding: 50px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #191919;
+    background-color: #000000;
+    opacity:0.8;
     text-align: center;
+    border: 2px solid rgb(32, 2, 104);
+    border-radius: 25px;
+    box-shadow: 0 0 100px #150355;
     
     
 }
@@ -18,6 +22,7 @@
 .box input[type = "text"],
 .box input[type = password] {
     border: 0;
+    color: white;
     background: none;
     display: block;
     margin: 20px auto;
@@ -33,8 +38,10 @@
 .box input[type = "text"]:focus,
 .box input[type = password]:focus {
     width: 300px;
-    border-color: peachpuff;
+    border-color: rgb(210, 242, 252);
     transition: 0.25s;
+    box-shadow: 0 0 50px #15f4fc;  
+
 }
 
 .box input[type = "submit"]{
@@ -50,8 +57,14 @@
     border-radius: 25px;
     transition: 0.25s;
     cursor: pointer;
+
 }
 
 .box input[type = "submit"]:hover {
-    background: yellowgreen;
+    background: orchid;
 }
+/* 
+.box input[type = "text"]:focus +.neon,
+.box input[type = password]:focus+.neon {
+    box-shadow: 0 0 50px #152cfc;  
+} */

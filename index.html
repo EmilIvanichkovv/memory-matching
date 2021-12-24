@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/common.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/login.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+     
+    
     <title>Login-Memory match</title>
 </head>
-<body>
-    <form class = "box" action="index.html">
+<body class="bg" style="background-image: url('assets/background.jpg');"   height: 100%;>
+    <div class="banner">
+        <p class="neonTexts" id="gameNameTitle">Matching Memory</h1>
+        <p class="neonTexts" id="gameEditionTitle">Neon edition</h2>
+    </div>
+    <form class="box"  action="index.html">
         <h1 class="login-heading">LOGIN</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
-        <input type="submit" name="" value="Login">
+        <input type="text" class="neonBoxes" placeholder="Username">
+        <input type="password" class="neonBoxes" placeholder="Password">
+        <input type="submit" class="neonBoxes" value="Login">
     </form>
 </body>
 </html>
