@@ -14,6 +14,7 @@ body {
   }
   
 .banner {
+    margin:0;
     padding-right: 70px;
     display: flex;
     align-items: flex-end;
@@ -21,9 +22,14 @@ body {
     justify-content: center;
     color: white;
 }
-    
+#border {
+    margin-bottom: 0;  
+    margin-top: 0;
+    font-size: 80px;
+}  
 #gameNameTitle {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    margin-top: 0;
     margin-bottom: 0;    
     font-size: 80px;
 }
@@ -31,6 +37,20 @@ body {
 #gameEditionTitle {
     margin-top: 0;
     font-size: 50px; 
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0%,18%,20%,50.1%,60%,65.1%,80%{
+        color: rgb(34, 34, 34);
+        text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+        color: #ffffff; 
+        text-shadow: #ff005b; 
+    }
+
+    
 }
 
 .neonBoxes {
@@ -43,11 +63,11 @@ body {
     0 0 7px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
+    0 0 42px #ff005b,
+    0 0 82px #ff005b, 
+    0 0 92px #ff005b,
+    0 0 102px #ff005b,
+    0 0 151px #ff005b; 
 }
 /* 
 .gameName */
