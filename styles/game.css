@@ -1,8 +1,8 @@
 
 .game-box {
-    width: 650px;
-    height: 650px;
-    padding: 50px;
+    width: 700px;
+    height: 700px;
+    padding: 30px;
     position: absolute;
     display: flex;
     align-items: center;
@@ -15,35 +15,50 @@
     text-align: center;
     border: 2px solid rgb(32, 2, 104);
     border-radius: 25px;
-    box-shadow: 0 0 100px #150355;
-    
-
-   
+    box-shadow: 0 0 100px #150355; 
 }
 
 .memory-game {
-    width: 640px;
-    height: 640px;
+    width: 680px;
+    height: 680px;
+    margin: auto;
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    perspective: 1000px;
 
 }
 
 .memory-card {
     position: relative;
+    margin: auto;
+    display: flex;
     flex: 1 0 21%;
     height: 25%;
-    width: 22%;    
+    width: 25%;
+    transform-style: preserve-3d;
+    transition: transform.5s;
+}
+
+.memory-card :hover {
+ 
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
 }
 
 .front-of-card,
 .back-of-card {
     position: absolute;
-    width: 90%;
-    height: 90%;
-    transform: translate(-50%, 10%);
+    width: 95%;
+    height: 95%;
+    backface-visibility: hidden;
 
+}
+
+.front-of-card {
+    transform: rotateY(180deg);
 }
