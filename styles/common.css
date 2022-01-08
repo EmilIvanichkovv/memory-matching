@@ -39,6 +39,143 @@ body {
     animation: animate 3s linear infinite;
 }
 
+
+@keyframes pulse {
+    0% {
+        color: lightblue;
+        text-shadow:
+        0 0 7px rgb(70, 70, 245),
+        0 0 10px rgb(70, 70, 245),
+        0 0 21px rgb(70, 70, 245),
+        0 0 42px rgb(70, 70, 245),
+        0 0 82px rgb(70, 70, 245), 
+        0 0 92px rgb(70, 70, 245),
+        0 0 102px rgb(70, 70, 245),
+        0 0 151px rgb(70, 70, 245);
+    }
+    10% {
+        color: lightcoral;
+        text-shadow:
+        0 0 7px rgb(242, 69, 69),
+        0 0 10px rgb(242, 69, 69),
+        0 0 21px rgb(242, 69, 69),
+        0 0 42px rgb(242, 69, 69),
+        0 0 82px rgb(242, 69, 69), 
+        0 0 92px rgb(242, 69, 69),
+        0 0 102px rgb(242, 69, 69),
+        0 0 151px rgb(242, 69, 69);
+    }
+    20% {
+        color: lightgoldenrodyellow;
+         text-shadow:
+        0 0 7px rgb(227, 177, 70),
+        0 0 10px rgb(227, 177, 70),
+        0 0 21px rgb(227, 177, 70),
+        0 0 42px rgb(227, 177, 70),
+        0 0 82px rgb(227, 177, 70), 
+        0 0 92px rgb(227, 177, 70),
+        0 0 102px rgb(227, 177, 70),
+        0 0 151px rgb(227, 177, 70);
+    }
+    30% {
+        color: lightgreen;
+        text-shadow:
+        0 0 7px rgb(153, 223, 82),
+        0 0 10px rgb(153, 223, 82),
+        0 0 21px rgb(153, 223, 82),
+        0 0 42px  rgb(153, 223, 82),
+        0 0 82px  rgb(153, 223, 82), 
+        0 0 92px  rgb(153, 223, 82),
+        0 0 102px rgb(153, 223, 82),
+        0 0 151px rgb(153, 223, 82);
+    }
+    40% {
+        color: rgb(163, 250, 205);
+        text-shadow:
+        0 0 7px rgb(85, 208, 144),
+        0 0 10px rgb(85, 208, 144),
+        0 0 21px rgb(85, 208, 144),
+        0 0 42px  rgb(85, 208, 144),
+        0 0 82px  rgb(85, 208, 144), 
+        0 0 92px  rgb(85, 208, 144),
+        0 0 102px rgb(85, 208, 144),
+        0 0 151px rgb(85, 208, 144);
+        
+    }
+    50% {
+        color: rgb(160, 255, 253);
+        text-shadow:
+        0 0 7px rgb(70, 194, 192),
+        0 0 10px rgb(70, 194, 192),
+        0 0 21px rgb(70, 194, 192),
+        0 0 42px  rgb(70, 194, 192),
+        0 0 82px  rgb(70, 194, 192), 
+        0 0 92px  rgb(70, 194, 192),
+        0 0 102px rgb(70, 194, 192),
+        0 0 151px rgb(70, 194, 192);
+    }
+    60% {
+        color: rgb(158, 168, 245);
+        text-shadow:
+        0 0 7px  rgb(83, 96, 199),
+        0 0 10px rgb(83, 96, 199),
+        0 0 21px rgb(83, 96, 199),
+        0 0 42px  rgb(83, 96, 199),
+        0 0 82px  rgb(83, 96, 199), 
+        0 0 92px  rgb(83, 96, 199),
+        0 0 102px rgb(83, 96, 199),
+        0 0 151px rgb(83, 96, 199);
+    }
+    70% {
+        color: rgb(218, 169, 235);
+        text-shadow:
+        0 0 7px rgb(194, 88, 230),
+        0 0 10px rgb(194, 88, 230),
+        0 0 21px rgb(194, 88, 230),
+        0 0 42px  rgb(194, 88, 230),
+        0 0 82px  rgb(194, 88, 230), 
+        0 0 92px  rgb(194, 88, 230),
+        0 0 102px rgb(194, 88, 230),
+        0 0 151px rgb(194, 88, 230);
+    }
+    80% {
+        color: rgb(237, 171, 213);
+        text-shadow:
+        0 0 7px rgb(162, 63, 126),
+        0 0 10px rgb(162, 63, 126),
+        0 0 21px rgb(162, 63, 126),
+        0 0 42px  rgb(162, 63, 126),
+        0 0 82px  rgb(162, 63, 126), 
+        0 0 92px  rgb(162, 63, 126),
+        0 0 102px rgb(162, 63, 126),
+        0 0 151px rgb(162, 63, 126);
+    }
+    90% {
+        color: rgb(242, 155, 155);
+        text-shadow:
+        0 0 7px rgb(206, 37, 37),
+        0 0 10px rgb(206, 37, 37),
+        0 0 21px rgb(206, 37, 37),
+        0 0 42px  rgb(206, 37, 37),
+        0 0 82px  rgb(206, 37, 37), 
+        0 0 92px  rgb(206, 37, 37),
+        0 0 102px rgb(206, 37, 37),
+        0 0 151px rgb(206, 37, 37);
+    }
+    100% {
+        color: rgb(163, 185, 233);
+        text-shadow:
+        0 0 7px rgb(9, 73, 213),
+        0 0 10px rgb(9, 73, 213),
+        0 0 21px rgb(9, 73, 213),
+        0 0 42px  rgb(9, 73, 213),
+        0 0 82px  rgb(9, 73, 213), 
+        0 0 92px  rgb(9, 73, 213),
+        0 0 102px rgb(9, 73, 213),
+        0 0 151px rgb(9, 73, 213);
+    }
+}
+
 @keyframes animate {
     0%,18%,20%,50.1%,60%,65.1%,80%{
         color: rgb(34, 34, 34);
@@ -46,7 +183,17 @@ body {
     }
     18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
         color: #ffffff; 
-        text-shadow: #ff005b; 
+        text-shadow: #ff005b;
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #fff,
+        0 0 82px #fff, 
+        0 0 92px #fff,
+        0 0 102px #fff,
+        0 0 151px #fff; 
+         
     }  
 }
 
@@ -55,15 +202,9 @@ body {
 }
 
 .neonTexts {
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #ff005b,
-    0 0 82px #ff005b, 
-    0 0 92px #ff005b,
-    0 0 102px #ff005b,
-    0 0 151px #ff005b; 
+    color: #000;
+    animation: pulse 60s linear infinite;
+    
 }
 
 /* 
