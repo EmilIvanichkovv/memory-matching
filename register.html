@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/common.css">
+    <script src="./scripts/register.js" type="module"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +23,29 @@
     </div>
     <form class="box"  action="index.html">
         <h1 class="login-heading">REGISTER</h1>
-        <input type="text" class="neonBoxes" placeholder="Username">
-        <input type="password" class="neonBoxes" placeholder="Password">
-        <input type="password" class="neonBoxes" placeholder="Confirm Password">
-        <input type="submit" class="neonBoxes" value="Register">
+        <div autocomplete="off">
+            <input type="text" id="register-username" class="neonBoxes" placeholder="Username" autocomplete="off">
+            <small class="error-message"></small>
+        </div >
+        <div>
+            <input type="email" id="register-email" class="neonBoxes" placeholder="E-mail" autocomplete="off">
+            <small class="error-message"></small>
+
+        </div>
+        <div>
+            <input type="password" id="register-password" class="neonBoxes" placeholder="Password"  autocomplete="off">
+            <small class="error-message"></small>
+
+        </div>
+        <div>
+            <input type="password" id="register-confirm-password" class="neonBoxes" placeholder="Confirm Password"  autocomplete="off"> 
+            <small class="error-message"></small>
+
+        </div>
+        <div>
+            <input type="submit" id="register-submit" class="neonBoxes" value="Register"  autocomplete="off">
+            <small class="error-message"></small>
+        </div>
     </form>
 </body>
 </html>

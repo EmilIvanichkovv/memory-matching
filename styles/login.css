@@ -2,6 +2,7 @@
 .login-heading {
     color: white;
 }
+
 .box {
     width: 400px;
     padding: 50px;
@@ -18,14 +19,14 @@
 }
 
 .box input[type = "text"],
-.box input[type = password] {
+.box input[type = "email"],
+.box input[type = "password"] {
     border: 0;
     color: white;
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
-    border:2px solid orchid;
     padding: 14px 10px;
     width: 250px;
     outline: none;
@@ -34,12 +35,12 @@
 }
 
 .box input[type = "text"]:focus,
-.box input[type = password]:focus {
+.box input[type = "email"]:focus,
+.box input[type = "password"]:focus {
     width: 300px;
     border-color: rgb(210, 242, 252);
     transition: 0.25s;
-    box-shadow: 0 0 50px #15f4fc;  
-
+    box-shadow: 0 0 50px #ffffff;  
 }
 
 .box input[type = "submit"]{
@@ -49,20 +50,32 @@
     display: block;
     margin: 20px auto;
     text-align: center;
-    border:2px solid orchid;
     padding: 14px 40px;
     outline: none;
     border-radius: 25px;
     transition: 0.25s;
     cursor: pointer;
-
 }
 
 .box input[type = "submit"]:hover {
-    background: orchid;
+    background: rgb(5, 0, 46);
 }
 /* 
 .box input[type = "text"]:focus +.neon,
 .box input[type = password]:focus+.neon {
     box-shadow: 0 0 50px #152cfc;  
 } */
+.error-message {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+
+}
+.error {
+    border:2px solid red;
+    box-shadow: 0 0 50px red; 
+}
+
+.valid {
+    border:2px solid green;
+    box-shadow: 0 0 50px green; 
+}

@@ -6,6 +6,13 @@ body {
     background-color: rgb(87, 118, 145);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+}
+
+
 .bg {
     background-image: url('assets/background.jpg');
     background-blend-mode: multiply;
@@ -198,7 +205,8 @@ body {
 }
 
 .neonBoxes {
-  box-shadow: 0 0 20px #ff005b; 
+    border:2px solid #0066ff;
+    box-shadow: 0 0 25px #0066ff; 
 }
 
 .neonTexts {
