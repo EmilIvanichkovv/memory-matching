@@ -20,29 +20,24 @@ input:-webkit-autofill:active {
   }
   
 .banner {
-    margin:0;
-    padding-right: 70px;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
+    
 }
 #border {
     margin-bottom: 0;  
     margin-top: 0;
-    font-size: 80px;
+    font-size: 5em;
 }  
 #gameNameTitle {
     /* margin-top: 50px; */
     margin-top: 0;
     margin-bottom: 0;    
-    font-size: 80px;
+    font-size: 5em;
 }
 
 #gameEditionTitle {
     margin-top: 0;
-    font-size: 50px; 
+    margin-bottom: 0.5em;
+    font-size: 3.5em; 
     animation: animate 3s linear infinite;
 }
 
@@ -200,7 +195,6 @@ input:-webkit-autofill:active {
         0 0 92px #fff,
         0 0 102px #fff,
         0 0 151px #fff; 
-         
     }  
 }
 
@@ -212,8 +206,20 @@ input:-webkit-autofill:active {
 .neonTexts {
     color: #000;
     animation: pulse 60s linear infinite;
-    
 }
 
-/* 
-.gameName */
+#neon-pypes {
+    margin:2em;
+    padding: 1em;
+    padding-right:3em;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    
+    border: double 10px;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 50px;
+}
+
