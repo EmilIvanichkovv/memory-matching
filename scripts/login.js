@@ -7,6 +7,7 @@ const loginPassword = document.getElementById('login-password')
 const errorEmptyEmail = 'PLEASE ENTER E-MAIL'
 const errorInvalidEmail = 'EMAIL IS NOT VALID'
 const errorNonRegisteredEmail = 'E-MAIL IS NOT REGISTERED YET'
+const errorEmptyPassword = 'PLEASE ENTER PASSWORD'
 const errorIncorrectPassword = 'PASSWORD IS NOT CORRECT'
 
 loginEmail.addEventListener('change', event => {
@@ -24,10 +25,23 @@ loginButton.addEventListener('click', loginPlayer)
 function loginPlayer() {
     event.preventDefault()
 
+    const inputEmail = loginEmail.value.trim();
+    const inputPassword = loginPassword.value.trim();
     let correctEmail = checkLoginEmail()
     let correctPassword = checkLoginPassword()
     if(correctEmail && correctPassword){
-        window.location.href = "game.html"
+        if(checkEmailPasswordMatch(inputEmail, inputPassword)){
+            window.location.href = "game.html"
+            setDefault(loginEmail)
+            setDefault(loginPassword)
+        }
+        else{
+            setError(loginPassword, errorIncorrectPassword)
+        }
+    }
+    else{
+        setDefault(loginEmail)
+        setDefault(loginPassword)
     }
 }
 
@@ -54,8 +68,8 @@ function checkLoginEmail() {
 function  checkLoginPassword() {
     const inputEmail = loginEmail.value.trim();
     const inputPassword = loginPassword.value.trim();
-    if(!checkEmailPasswordMatch(inputEmail, inputPassword)){
-        setError(loginPassword, errorIncorrectPassword)
+    if(inputPassword == '') {
+        setError(loginPassword, errorEmptyPassword)
         return false
     }
     else {
@@ -102,7 +116,11 @@ function setValid(item) {
 }
 
 function setDefault(item){
+    const itemParent = item.parentElement
+    const errorItem = itemParent.querySelector('small')
+    
     item.value = ''
+    errorItem.innerHTML = ``
     item.classList.remove('valid')
     item.classList.add('neonBoxes')
 }
