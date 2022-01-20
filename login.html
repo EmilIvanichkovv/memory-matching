@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/common.css">
+    <script src="./scripts/login.js" type="module"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +24,21 @@
     </div>
     <form class="box"  action="index.html">
         <h1 class="login-heading">LOGIN</h1>
-        <input type="text" class="neonBoxes" placeholder="Username">
-        <input type="password" class="neonBoxes" placeholder="Password">
-        <input type="submit" class="neonBoxes" value="Login">
+
+        <div autocomplete="off">
+            <input type="text" id="login-email" class="neonBoxes" placeholder="E-mail" autocomplete="off">
+            <small class="error-message"></small>
+        </div>
+
+        <div autocomplete="off">
+            <input type="password" id="login-password" class="neonBoxes" placeholder="Password" autocomplete="off">
+            <small class="error-message"></small>
+        </div>
+
+        <div autocomplete="off">
+            <input type="submit" id="login-submit" class="neonBoxes" value="Login">
+            <small class="error-message"></small>
+        </div>
     </form>
 </body>
 </html>
