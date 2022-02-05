@@ -1,6 +1,25 @@
 
-const cards = document.querySelectorAll('.memory-card');
+const level16 = 16
+const level36 = 36
+const level64 = 64
 
+const gameLevel = level16
+
+const startButton = document.getElementById('start-game')
+const restartButton = document.getElementById('restart-game')
+const gameField = document.getElementById('memory-game')
+const afterFinishBoard = document.getElementById('after-finish')
+
+startButton.addEventListener('click', event => {
+    event.preventDefault()
+    const itemParent = startButton.parentElement
+    itemParent.classList.add('hide')
+    gameField.classList.remove('hide')
+
+})
+
+const cards = document.querySelectorAll('.memory-card')
+let flippedCards = 0
 let hasFlippedCard = false
 let boardLock = false
 let firstCard, secondCard
@@ -16,16 +35,23 @@ function flipCard() {
 
         return
     }
-    secondCard = this;
-
+    secondCard = this
     areMatching()
-
+    if (flippedCards === gameLevel / 2){
+        gameField.classList.add('finished-game')
+        afterFinishBoard.classList.remove('hide')
+    }
 }
 
 function areMatching() {
     let isMatch = firstCard.dataset.socialmedia === secondCard.dataset.socialmedia
-    
-        isMatch ? disableMatchingCards() : unflipCards()
+    if(isMatch){
+        disableMatchingCards()
+        flippedCards = flippedCards + 1
+    }
+    else{
+        unflipCards()
+    }
 }
 
 function disableMatchingCards() {
@@ -36,13 +62,13 @@ function disableMatchingCards() {
 }
 
 function unflipCards() {
-    boardLock = true;
+    boardLock = true
     setTimeout(() => {
         firstCard.classList.remove('flip')
         secondCard.classList.remove('flip')
 
         resetBoard()
-    }, 1500)
+    }, 1000)
 }
 
 function resetBoard() {
@@ -52,11 +78,18 @@ function resetBoard() {
     secondCard = null
   }
 
+  function restartGame() {
+    event.preventDefault()
+    location.reload()
+  }
+
   (function shuffleCards() {
     cards.forEach(card => {
-      let randomPos = Math.floor(Math.random() * 16);
+      let randomPos = Math.floor(Math.random() * level16);
       card.style.order = randomPos;
-    });
-  })();
+    })
+  })()
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+
+cards.forEach(card => card.addEventListener('click', flipCard))
+restartButton.addEventListener('click', restartGame)

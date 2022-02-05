@@ -6,22 +6,35 @@ body {
     background-color: rgb(87, 118, 145);
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+button{
+    border: 0;
+    background: none;
+    color: white;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    outline: none;
+    border-radius: 25px;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
+button:hover {
+    background: rgb(255, 255, 255);
+    color: darkblue;
+}
 
 .bg {
     background-image: url('assets/background.jpg');
     background-blend-mode: multiply;
     height: 100%;
-  }
-  
-.banner {
-    
 }
+
+.content {
+    position: relative;
+}
+
 #border {
     margin-bottom: 0;  
     margin-top: 0;
@@ -209,7 +222,7 @@ input:-webkit-autofill:active {
 }
 
 #neon-pypes {
-    margin:2em;
+    margin:2em 2em 0 2em;
     padding: 1em;
     padding-right:3em;
     display: flex;
