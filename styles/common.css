@@ -193,37 +193,47 @@ button:hover {
 
 @keyframes pulseShadow {
     0% {
-        box-shadow: 0 0 100pxrgb(70, 70, 245);
+        border: 2px solid rgb(70, 70, 245);
+        box-shadow: 0 0 100px rgb(70, 70, 245);
     }
     10% {
+        border: 2px solid rgb(242, 69, 69);
         box-shadow: 0 0 100px rgb(242, 69, 69);
     }
     20% {
+        border: 2px solid rgb(227, 177, 70);
         box-shadow: 0 0 100px rgb(227, 177, 70);
     }
     30% {
+        border: 2px solid rgb(153, 223, 82);
         box-shadow: 0 0 100px rgb(153, 223, 82);
     }
     40% {
-        box-shadow: 0 0 100px rgb(85, 208, 144);
-        
+        border: 2px solid rgb(85, 208, 144);   
+        box-shadow: 0 0 100px rgb(85, 208, 144);   
     }
     50% {
+        border: 2px solid rgb(70, 194, 192);
         box-shadow: 0 0 100px rgb(70, 194, 192);
     }
     60% {
+        border: 2px solid rgb(83, 96, 199);
         box-shadow: 0 0 100px rgb(83, 96, 199);
     }
     70% {
+        border: 2px solid rgb(194, 88, 230);
         box-shadow: 0 0 100px rgb(194, 88, 230);
     }
     80% {
+        border: 2px solid rgb(32, 2, 104);
         box-shadow: 0 0 100px rgb(162, 63, 126);
     }
     90% {
+        border: 2px solid rgb(206, 37, 37);
         box-shadow: 0 0 100px rgb(206, 37, 37);
     }
     100% {
+        border: 2px solid rgb(9, 73, 213);
         box-shadow: 0 0 100px rgb(9, 73, 213);
     }
 }
@@ -273,3 +283,23 @@ button:hover {
     border-radius: 50px;
 }
 
+.navigator{
+    padding: 1em;
+    border-radius: 20px;
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 2%;
+    animation: pulseShadow 60s linear infinite;
+}
+
+.navigator-elements{
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+.nav-game-icon{
+    filter: invert(1);
+    width: 1.5vw;
+}

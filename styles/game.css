@@ -13,9 +13,8 @@
     background-color: #000000;
     opacity:0.8;
     text-align: center;
-    border: 2px solid rgb(32, 2, 104);
-    border-radius: 25px;
     animation: pulseShadow 60s linear infinite;
+    border-radius: 25px;
 
 }
 
