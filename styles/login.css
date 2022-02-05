@@ -12,8 +12,8 @@ h1 {
 }
 
 .container {
-    width: 800px;
-    height: 400px;
+    width: 40vw;
+    height: 50vh;
     padding: 50px;
     position: absolute;
     display: flex;
@@ -29,7 +29,7 @@ h1 {
     text-align: center;
     border: 2px solid rgb(32, 2, 104);
     border-radius: 25px;
-    box-shadow: 0 0 100px #150355;
+    animation: pulseShadow 60s linear infinite;
 }
 
 .container input[type = "text"],

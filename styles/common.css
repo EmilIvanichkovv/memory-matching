@@ -44,18 +44,18 @@ button:hover {
     /* margin-top: 50px; */
     margin-top: 0;
     margin-bottom: 0;    
-    font-size: 5em;
+    font-size: 3em;
 }
 
 #gameEditionTitle {
     margin-top: 0;
     margin-bottom: 0.5em;
-    font-size: 3.5em; 
+    font-size: 1.5em; 
     animation: animate 3s linear infinite;
 }
 
 
-@keyframes pulse {
+@keyframes pulseText {
     0% {
         color: lightblue;
         text-shadow:
@@ -82,7 +82,7 @@ button:hover {
     }
     20% {
         color: lightgoldenrodyellow;
-         text-shadow:
+        text-shadow:
         0 0 7px rgb(227, 177, 70),
         0 0 10px rgb(227, 177, 70),
         0 0 21px rgb(227, 177, 70),
@@ -191,6 +191,43 @@ button:hover {
     }
 }
 
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0 0 100pxrgb(70, 70, 245);
+    }
+    10% {
+        box-shadow: 0 0 100px rgb(242, 69, 69);
+    }
+    20% {
+        box-shadow: 0 0 100px rgb(227, 177, 70);
+    }
+    30% {
+        box-shadow: 0 0 100px rgb(153, 223, 82);
+    }
+    40% {
+        box-shadow: 0 0 100px rgb(85, 208, 144);
+        
+    }
+    50% {
+        box-shadow: 0 0 100px rgb(70, 194, 192);
+    }
+    60% {
+        box-shadow: 0 0 100px rgb(83, 96, 199);
+    }
+    70% {
+        box-shadow: 0 0 100px rgb(194, 88, 230);
+    }
+    80% {
+        box-shadow: 0 0 100px rgb(162, 63, 126);
+    }
+    90% {
+        box-shadow: 0 0 100px rgb(206, 37, 37);
+    }
+    100% {
+        box-shadow: 0 0 100px rgb(9, 73, 213);
+    }
+}
+
 @keyframes animate {
     0%,18%,20%,50.1%,60%,65.1%,80%{
         color: rgb(34, 34, 34);
@@ -218,7 +255,7 @@ button:hover {
 
 .neonTexts {
     color: #000;
-    animation: pulse 60s linear infinite;
+    animation: pulseText 60s linear infinite;
 }
 
 #neon-pypes {
