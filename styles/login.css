@@ -23,7 +23,7 @@ h1 {
     gap: 100px;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     background-color: #000000;
     opacity:0.8;
     text-align: center;
