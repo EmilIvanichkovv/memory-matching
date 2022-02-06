@@ -11,12 +11,14 @@ const gameField = document.getElementById('memory-game')
 const afterFinishBoard = document.getElementById('after-finish')
 var welcomeText = document.getElementById('wellcoming')
 welcomeText.textContent += " " + database.getItem("currentUser") + "?"
+var resultTimeMessage = document.getElementById('result-time')
 
 startButton.addEventListener('click', event => {
     event.preventDefault()
     const itemParent = startButton.parentElement
     itemParent.classList.add('hide')
     gameField.classList.remove('hide')
+    interval = setInterval(startTimer)
 
 })
 
@@ -42,6 +44,10 @@ function flipCard() {
     if (flippedCards === gameLevel / 2){
         gameField.classList.add('finished-game')
         afterFinishBoard.classList.remove('hide')
+        clearInterval(interval)
+        const currenTime = seconds + ":" + tens
+        resultTimeMessage.textContent += " " + currenTime
+        
     }
 }
 
@@ -95,3 +101,25 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard))
 restartButton.addEventListener('click', restartGame)
+
+// TIMER UTILS
+var interval
+var seconds = 00
+var tens = 00
+var timerSeconds = document.getElementById('seconds')
+var timerTens = document.getElementById('tens')
+
+function startTimer(){
+    tens++
+
+    if(tens < 9) timerTens.innerHTML = "0" + tens
+    if(tens > 9) timerTens.innerHTML = tens
+    if(tens > 99){
+        tens = 0
+        seconds++
+        timerSeconds.innerHTML = "0" + seconds
+        timerTens.innerHTML = "0" + 0
+    }
+    if(seconds > 9) timerSeconds.innerHTML = seconds
+    
+}

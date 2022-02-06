@@ -1,3 +1,8 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 .game-box {
     width: 37vw;
@@ -15,7 +20,6 @@
     text-align: center;
     animation: pulseShadow 60s linear infinite;
     border-radius: 25px;
-
 }
 
 .start-game {
@@ -26,6 +30,7 @@
     color: white;
     font-size: 3vw;
 }
+
 .start-game.hide {
     display: none;
 }
@@ -129,4 +134,21 @@
         transform: scale(1);
     }
     
+}
+
+.timer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(330%, 0%);
+    width: 12vw;
+    height: 9vh;
+    background-color: black;
+    border-radius: 20px;
+    border:2px solid #6f0420;
+    box-shadow: 0 0 25px #6f0420;
+    opacity: 0.9;
+    animation: pulseShadow 60s linear infinite,
+               pulseText 60s linear infinite;
+    font-size: 2em;
 }

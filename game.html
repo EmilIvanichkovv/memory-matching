@@ -21,29 +21,30 @@
             <p class="neonTexts" id="gameEditionTitle">Neon edition</p>
         </div>
     </div>
-    <div class="navigator neonBoxes">
-        <nav class="navigator-elements">
-            <div class="navigator-game">
-                <img class="nav-icon" src="assets\nav-icons\game-black.png" alt="">
-                <div class="navigator-expand navigator-game" id="nav-game">
-                    <p>PLAY AGAIN</p> 
-                </div>
-            </div>
-            <div class="navigator-leaderboard">
-                <img class="nav-icon" src="assets\nav-icons\leaderboard-black.png" alt="">
-                <div class="navigator-expand navigator-leaderboard" id="nav-leaderboard">
-                    <p>CHECK LEADERBOARD</p> 
-                </div>
-            </div>
-            <div class="navigator-logout">
-                <img class="nav-icon" src="assets\nav-icons\logout-black.png" alt="">
-                <div class="navigator-expand navigator-account" id="nav-account">
-                    <p>LOG OUT</p> 
-                </div>
-            </div>
-        </nav>
-    </div>
     <div class="content">
+        <div class="navigator neonBoxes">
+            <nav class="navigator-elements">
+                <div class="navigator-game">
+                    <img class="nav-icon" src="assets\nav-icons\game-black.png" alt="">
+                    <div class="navigator-expand navigator-game" id="nav-game">
+                        <p>PLAY AGAIN</p> 
+                    </div>
+                </div>
+                <div class="navigator-leaderboard">
+                    <img class="nav-icon" src="assets\nav-icons\leaderboard-black.png" alt="">
+                    <div class="navigator-expand navigator-leaderboard" id="nav-leaderboard">
+                        <p>CHECK LEADERBOARD</p> 
+                    </div>
+                </div>
+                <div class="navigator-logout">
+                    <img class="nav-icon" src="assets\nav-icons\logout-black.png" alt="">
+                    <div class="navigator-expand navigator-account" id="nav-account">
+                        <p>LOG OUT</p> 
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
         <form class="game-box"  action="index.html">
             <div  class="start-game">
                  <p id="wellcoming">READY TO PLAY</p>
@@ -124,16 +125,19 @@
             </section>
             <div  class="after-finish hide" id="after-finish">
                 <h3>congratulations !!!</h3>
-                <p>Your time is 00:00s</p>
+                <p id="result-time">Your time is</p>
                 <p>Play agaian to beat your time, or check your possition in the leaderboard</p>
                 <div class="after-finish-buttons">
                     <button class="neonBoxes" id="restart-game">PLAY AGAIN</button>
                     <button class="neonBoxes" id="leaderboard">LEADERBOARD</button>
                 </div>
-
            </div>
         </form>
+        <div class="timer-container">
+            <p><span id="seconds">00</span>: <span id="tens">00</span></p>
+        </div>
     </div>
+
     
 </body>
 <script src="scripts/gameplay.js"></script>

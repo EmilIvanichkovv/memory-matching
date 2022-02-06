@@ -288,7 +288,7 @@ button:hover {
     padding: 1em;
     border-radius: 20px;
     color: white;
-    top: 40%;
+    /* top: 40%; */
     left: 2%;
     background-color: black;
 }
