@@ -23,9 +23,24 @@
     </div>
     <div class="navigator neonBoxes">
         <nav class="navigator-elements">
-            <img class="nav-game-icon" src="assets\nav-icons\game-black.png" alt="">
-            <img class="nav-game-icon" src="assets\nav-icons\leaderboard-black.png" alt="">
-            <img class="nav-game-icon" src="assets\nav-icons\logout-black.png" alt="">
+            <div class="navigator-game">
+                <img class="nav-icon" id="nav-game" src="assets\nav-icons\game-black.png" alt="">
+                <div class="navigator-expand navigator-game">
+                    <p>PLAY NOW</p> 
+                </div>
+            </div>
+            <div class="navigator-leaderboard">
+                <img class="nav-icon" id="nav-leaderboard" src="assets\nav-icons\leaderboard-black.png" alt="">
+                <div class="navigator-expand navigator-leaderboard ">
+                    <p>CHECK LEADERBOARD</p> 
+                </div>
+            </div>
+            <div class="navigator-logout">
+                <img class="nav-icon" id="nav-account" src="assets\nav-icons\logout-black.png" alt="">
+                <div class="navigator-expand navigator-account ">
+                    <p>LOG OUT</p> 
+                </div>
+            </div>
         </nav>
     </div>
     <div class="content">
@@ -108,7 +123,7 @@
                 </div>
             </section>
             <div  class="after-finish hide" id="after-finish">
-                <h3>CONGRATULATIONS !!!</h3>
+                <h3>congratulations !!!</h3>
                 <p>Your time is 00:00s</p>
                 <p>Play agaian to beat your time, or check your possition in the leaderboard</p>
                 <div class="after-finish-buttons">
@@ -122,4 +137,6 @@
     
 </body>
 <script src="scripts/gameplay.js"></script>
+<script src="scripts/navigator.js"></script>
+
 </html>

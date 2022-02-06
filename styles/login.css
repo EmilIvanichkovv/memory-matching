@@ -37,12 +37,15 @@ h1 {
 .container input[type = "password"] {
     border: 0;
     color: white;
+    font-size: 1em;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
     padding: 14px 10px;
-    width: 250px;
+    width: 15vw;
     outline: none;
     border-radius: 25px;
     transition: 0.25s;
@@ -51,7 +54,7 @@ h1 {
 .container input[type = "text"]:focus,
 .container input[type = "email"]:focus,
 .container input[type = "password"]:focus {
-    width: 300px;
+    width: 17vw;
     border-color: rgb(210, 242, 252);
     transition: 0.25s;
     box-shadow: 0 0 50px #ffffff;  
@@ -60,6 +63,8 @@ h1 {
 .container input[type = "submit"],
 .container button
 {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
     border: 0;
     background: none;
     color: white;

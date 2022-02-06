@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/common.css">
-    <script src="./scripts/login.js" type="module"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,9 +23,24 @@
     </div>
     <div class="navigator neonBoxes">
         <nav class="navigator-elements">
-            <img class="nav-game-icon" src="assets\nav-icons\game-black.png" alt="">
-            <img class="nav-game-icon" src="assets\nav-icons\leaderboard-black.png" alt="">
-            <img class="nav-game-icon" src="assets\nav-icons\user-black.png" alt="">
+            <div class="navigator-game">
+                <img class="nav-icon" id="nav-game" src="assets\nav-icons\game-black.png" alt="">
+                <div class="navigator-expand navigator-game">
+                    <p>PLAY NOW</p> 
+                </div>
+            </div>
+            <div class="navigator-leaderboard">
+                <img class="nav-icon" id="nav-leaderboard" src="assets\nav-icons\leaderboard-black.png" alt="">
+                <div class="navigator-expand navigator-leaderboard ">
+                    <p>CHECK LEADERBOARD</p> 
+                </div>
+            </div>
+            <div class="navigator-logout">
+                <img class="nav-icon" id="nav-account" src="assets\nav-icons\user-black.png" alt="">
+                <div class="navigator-expand navigator-account ">
+                    <p>LOG IN</p> 
+                </div>
+            </div>
         </nav>
     </div>
     <div class="content">
@@ -90,14 +104,11 @@
                         <p>Already have an account? Log in!</p>
                         <button class="neonBoxes" id="loginAction">Log in</button>
                     </div>
-            
                 </div>
         </div>
-        
-        </div>
-    
+        </div>    
     </div>
-   
-   
 </body>
+<script src="scripts/navigator.js"></script>
+<script src="scripts/login.js" type="module"></script>
 </html>
