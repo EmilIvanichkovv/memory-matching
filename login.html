@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/common.css">
-    <script src="./scripts/login.js" type="module"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,23 +21,94 @@
             <p class="neonTexts" id="gameEditionTitle">Neon edition</p>
         </div>
     </div>
-    <form class="box"  action="index.html">
-        <h1 class="login-heading">LOGIN</h1>
-
-        <div autocomplete="off">
-            <input type="text" id="login-email" class="neonBoxes" placeholder="E-mail" autocomplete="off">
-            <small class="error-message"></small>
+    <div class="navigator neonBoxes">
+        <nav class="navigator-elements">
+            <div class="navigator-game">
+                <img class="nav-icon"  src="assets\nav-icons\game-black.png" alt="">
+                <div class="navigator-expand navigator-game" id="nav-game">
+                    <p>PLAY NOW</p> 
+                </div>
+            </div>
+            <div class="navigator-leaderboard">
+                <img class="nav-icon"  src="assets\nav-icons\leaderboard-black.png" alt="">
+                <div class="navigator-expand navigator-leaderboard" id="nav-leaderboard">
+                    <p>CHECK LEADERBOARD</p> 
+                </div>
+            </div>
+            <div class="navigator-logout">
+                <img class="nav-icon" src="assets\nav-icons\user-black.png" alt="">
+                <div class="navigator-expand navigator-account" id="nav-account">
+                    <p>LOG IN</p> 
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="container" id="container">
+            <form class="login-container"  action="index.html">
+                <h1 class="sign-heading">LOGIN</h1>
+        
+                <div autocomplete="off">
+                    <input type="text" id="login-email" class="neonBoxes" placeholder="E-mail" autocomplete="off">
+                    <small class="error-message"></small>
+                </div>
+        
+                <div autocomplete="off">
+                    <input type="password" id="login-password" class="neonBoxes" placeholder="Password" autocomplete="off">
+                    <small class="error-message"></small>
+                </div>
+        
+                <div autocomplete="off">
+                    <input type="submit" id="login-submit" class="neonBoxes" value="Login">
+                    <small class="error-message"></small>
+                </div>
+            </form>
+    
+            <form class="register-container"  action="index.html">
+                <h1 class="sign-heading">REGISTER</h1>
+                <div autocomplete="off">
+                    <input type="text" id="register-username" class="neonBoxes" placeholder="Username" autocomplete="off">
+                    <small class="error-message"></small>
+                </div >
+                <div autocomplete="off">
+                    <input type="email" id="register-email" class="neonBoxes" placeholder="E-mail" autocomplete="off">
+                    <small class="error-message"></small>
+        
+                </div>
+                <div>
+                    <input type="password" id="register-password" class="neonBoxes" placeholder="Password"  autocomplete="off">
+                    <small class="error-message"></small>
+        
+                </div>
+                <div>
+                    <input type="password" id="register-confirm-password" class="neonBoxes" placeholder="Confirm Password"  autocomplete="off"> 
+                    <small class="error-message"></small>
+        
+                </div>
+                <div>
+                    <input type="submit" id="register-submit" class="neonBoxes" value="Register"  autocomplete="off">
+                    <small class="error-message"></small>
+                </div>
+            </form>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel register-overlay">
+                        <h1>LOGIN AND LETS PLAY</h1>
+                        <p>New here? Register now!</p>
+                        <button class="neonBoxes" id="registerAction">Register</button>          
+                    </div>
+            
+                    <div class="overlay-panel login-overlay">
+                        <h1>HELLO BUDDY.</h1>
+                        <h1>REGISTER NOW TO PLAY</h1>
+                        <p>Already have an account? Log in!</p>
+                        <button class="neonBoxes" id="loginAction">Log in</button>
+                    </div>
+                </div>
         </div>
-
-        <div autocomplete="off">
-            <input type="password" id="login-password" class="neonBoxes" placeholder="Password" autocomplete="off">
-            <small class="error-message"></small>
-        </div>
-
-        <div autocomplete="off">
-            <input type="submit" id="login-submit" class="neonBoxes" value="Login">
-            <small class="error-message"></small>
-        </div>
-    </form>
+        </div>    
+    </div>
 </body>
+<script src="scripts/navigator.js"></script>
+<script src="scripts/login.js" type="module"></script>
 </html>

@@ -1,26 +1,40 @@
 
 .game-box {
-    width: 700px;
-    height: 700px;
-    padding: 30px;
-    position: absolute;
+    width: 37vw;
+    height: 37vw;
+    padding: 1vw;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     top: 65%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     background-color: #000000;
     opacity:0.8;
     text-align: center;
-    border: 2px solid rgb(32, 2, 104);
+    animation: pulseShadow 60s linear infinite;
     border-radius: 25px;
-    box-shadow: 0 0 100px #150355; 
+
+}
+
+.start-game {
+    padding: 2em;
+    border:2px solid #6f0420;
+    box-shadow: 0 0 25px #6f0420; 
+    border-radius: 50px;
+    color: white;
+    font-size: 3vw;
+}
+.start-game.hide {
+    display: none;
 }
 
 .memory-game {
-    width: 680px;
-    height: 680px;
+    transform: scale(1);
+    transition: transform 2s;
+    width: 35vw;
+    height: 35vw;
     margin: auto;
     position: absolute;
     display: flex;
@@ -30,9 +44,20 @@
     perspective: 1000px;
 }
 
+.memory-game.hide{
+    visibility:hidden;
+    transform: scale(0.1);
+}
+
+.memory-game.finished-game{
+    filter: blur(15px);
+    opacity: 0.5;
+    transition: 2s;
+}
+
 .memory-card {
     position: relative;
-    margin: 5px;
+    margin: 0.3vw;
     display: flex;
     flex: 1 0 21%;
     width: calc(25% - 10px);
@@ -42,7 +67,7 @@
 }
 
 .memory-card:hover {
-    transform: scale(0.5);
+    transform: scale(0.9);
 }
 
 .memory-card.flip {
@@ -64,4 +89,44 @@
 
 .front-of-card {
     transform: rotateY(180deg);
+}
+
+.after-finish {
+    padding-bottom: 30px;
+    z-index: 100;
+    color: white;
+    font-size: 2vw;
+    border:2px solid #6f0420;
+    box-shadow: 0 0 25px #6f0420; 
+    border-radius: 50px;
+    background-color: black;
+    opacity: 0.9;
+    animation: revealAfterFinish 2s forwards;
+}
+
+.after-finish.hide{
+
+    display: none;
+    visibility: hidden;
+}
+
+.after-finish-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.after-finish-buttons button{
+    margin: 15px;
+}
+
+@keyframes revealAfterFinish {
+    0%{
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
 }
