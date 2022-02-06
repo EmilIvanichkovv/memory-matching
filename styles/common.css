@@ -302,23 +302,41 @@ button:hover {
     padding: 0.8em 0 0.8em 0;
 }
 
-.nav-icon{
+.nav-icon,
+.nav-icon-inner{
     filter: invert(1);
     width: 1.5vw;
 }
 
+.nav-icon:hover{
+    opacity: 0;
+}
+
 .navigator-expand{
-    /* opacity: 0; */
-    visibility: hidden;
+    content: "";
+    opacity: 0;
+    user-select: none;
     position: absolute;
-    z-index: 0;
+    z-index: 10;
     height: 2.5vw;
     width: 1vw;
-    left: 100%;
     padding: 0.2em;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.navigator-expand:hover{
+    color: white;
+    width: 10vw;
+    visibility: visible;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 0 20px 20px 0;
+    animation: revealNavigatorField 0.5s forwards;
+    border:2px solid #0066ff;
+    border-left: none !important;
 }
 
 .navigator-expand.navigator-game{
@@ -332,7 +350,7 @@ button:hover {
 .navigator-expand.navigator-account{
     top: 79%; 
 }
-
+/* 
 .navigator-expand.navigator-game.reveal,
 .navigator-expand.navigator-leaderboard.reveal,
 .navigator-expand.navigator-account.reveal{
@@ -343,8 +361,8 @@ button:hover {
     animation: revealNavigatorField 0.5s forwards;
     border:2px solid #0066ff;
     border-left: none !important;
-    /* clip-path: inset(-1px -1px -1px 0); */
-}
+    clip-path: inset(-1px -1px -1px 0);
+} */
 
 @keyframes revealNavigatorField {
     0%{
