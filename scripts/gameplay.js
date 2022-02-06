@@ -1,4 +1,4 @@
-
+database = window.localStorage
 const level16 = 16
 const level36 = 36
 const level64 = 64
@@ -9,6 +9,8 @@ const startButton = document.getElementById('start-game')
 const restartButton = document.getElementById('restart-game')
 const gameField = document.getElementById('memory-game')
 const afterFinishBoard = document.getElementById('after-finish')
+var welcomeText = document.getElementById('wellcoming')
+welcomeText.textContent += " " + database.getItem("currentUser") + "?"
 
 startButton.addEventListener('click', event => {
     event.preventDefault()

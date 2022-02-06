@@ -1,8 +1,6 @@
 var database = window.localStorage
-
-const loginButton = document.getElementById('login-submit')
-const loginEmail = document.getElementById('login-email')
-const loginPassword = document.getElementById('login-password')
+var currentUser = "currentUser"
+database.setItem(currentUser, "")
 
 // ERROR MESSAGES:
 // Login error messages
@@ -18,7 +16,11 @@ const errorDuplicateEmail = 'THIS EMAIL ALREADY EXISTS'
 const errorPasswordLength = 'PASSWORD MUST BE AT LEAST 5 SYMBOLS'
 const errorPasswordConfirmation = 'PASSWORD DOES NOT MATCH'
 
-
+// LOGIN UTILS:
+// Login buttons:
+const loginButton = document.getElementById('login-submit')
+const loginEmail = document.getElementById('login-email')
+const loginPassword = document.getElementById('login-password')
 
 loginEmail.addEventListener('change', event => {
     event.preventDefault()
@@ -41,6 +43,8 @@ function loginPlayer() {
     let correctPassword = checkLoginPassword()
     if(correctEmail && correctPassword){
         if(checkEmailPasswordMatch(inputEmail, inputPassword)){
+            const user = JSON.parse(database.getItem(`${inputEmail}`));
+            database.setItem(currentUser, user[0])
             window.location.href = "game.html"
             setDefault(loginEmail)
             setDefault(loginPassword)
@@ -103,55 +107,15 @@ function checkEmailExistence(inputEmail){
     return true; 
 }
 
-function setError(item, message) {
-    const itemParent = item.parentElement
-    const errorItem = itemParent.querySelector('small')
-
-    errorItem.innerHTML = `${message}`
-
-    item.classList.add('error')
-    item.classList.remove('valid')
-    item.classList.remove('neonBoxes')
-}
-
-function setValid(item) {
-    const itemParent = item.parentElement
-    const errorItem = itemParent.querySelector('small')
-
-    errorItem.innerHTML = ``
-
-    item.classList.add('valid')
-    item.classList.remove('error')
-    item.classList.remove('neonBoxes')
-}
-
-function setDefault(item){
-    const itemParent = item.parentElement
-    const errorItem = itemParent.querySelector('small')
-    
-    item.value = ''
-    errorItem.innerHTML = ``
-    item.classList.remove('valid')
-    item.classList.add('neonBoxes')
-}
-
-function validateEmail(input)
-{
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
-    return (true)
-  }
-    return (false)
-}
-
 // REGISTER UTILS
-
+// Register buttons:
 const registerButton = document.getElementById('register-submit')
 const registerUsername = document.getElementById('register-username')
 const registerEmail = document.getElementById('register-email')
 const registerPassword = document.getElementById('register-password')
 const registerConfirmPassword = document.getElementById('register-confirm-password')
 
-const allInputs = [registerUsername, registerEmail, registerPassword, registerConfirmPassword  ] 
+const allInputs = [registerUsername, registerEmail, registerPassword, registerConfirmPassword] 
 
 registerUsername.addEventListener('change', event => {
     event.preventDefault()
@@ -172,6 +136,7 @@ registerConfirmPassword.addEventListener('change', event =>{
     event.preventDefault()
     checkPasswordConfirmation()
 })
+
 registerButton.addEventListener('click', registerPlayer)
 
 function registerPlayer() {
@@ -260,6 +225,45 @@ function checkEmailDuplication(inputEmail){
     return true; 
 }
 
+// COMMON UTILS
+function setError(item, message) {
+    const itemParent = item.parentElement
+    const errorItem = itemParent.querySelector('small')
+
+    errorItem.innerHTML = `${message}`
+
+    item.classList.add('error')
+    item.classList.remove('valid')
+    item.classList.remove('neonBoxes')
+}
+
+function setValid(item) {
+    const itemParent = item.parentElement
+    const errorItem = itemParent.querySelector('small')
+
+    errorItem.innerHTML = ``
+
+    item.classList.add('valid')
+    item.classList.remove('error')
+    item.classList.remove('neonBoxes')
+}
+
+function setDefault(item){
+    const itemParent = item.parentElement
+    const errorItem = itemParent.querySelector('small')
+    
+    item.value = ''
+    errorItem.innerHTML = ``
+    item.classList.remove('valid')
+    item.classList.add('neonBoxes')
+}
+function validateEmail(input)
+{
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
+    return (true)
+  }
+    return (false)
+}
 
 // UI UTILS
 const registerActionButton = document.getElementById('registerAction');
