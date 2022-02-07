@@ -18,7 +18,7 @@ startButton.addEventListener('click', event => {
     const itemParent = startButton.parentElement
     itemParent.classList.add('hide')
     gameField.classList.remove('hide')
-    interval = setInterval(startTimer)
+    interval = setInterval(startTimer, 10)
 
 })
 
@@ -47,7 +47,6 @@ function flipCard() {
         clearInterval(interval)
         const currenTime = seconds + ":" + tens
         resultTimeMessage.textContent += " " + currenTime
-        
     }
 }
 
@@ -98,7 +97,6 @@ function resetBoard() {
     })
   })()
 
-
 cards.forEach(card => card.addEventListener('click', flipCard))
 restartButton.addEventListener('click', restartGame)
 
@@ -120,6 +118,5 @@ function startTimer(){
         timerSeconds.innerHTML = "0" + seconds
         timerTens.innerHTML = "0" + 0
     }
-    if(seconds > 9) timerSeconds.innerHTML = seconds
-    
+    if(seconds > 9) timerSeconds.innerHTML = seconds   
 }
