@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/leaderboard.css">
+    <link rel="stylesheet" href="styles/common.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+    <title>Memory match</title>
+</head>
+<body class="bg" style="background-image: url('assets/background.jpg');"   height: 100%;>    
+    <div class="banner">
+        <div id="neon-pypes" class="neonTexts" >
+            <p class="neonTexts" id="gameNameTitle">   Matching Memory</p>
+            <p class="neonTexts" id="gameEditionTitle">Neon edition</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="navigator neonBoxes">
+            <nav class="navigator-elements">
+                <div class="navigator-game">
+                    <img class="nav-icon" src="assets\nav-icons\game-black.png" alt="">
+                    <div class="navigator-expand navigator-game" id="nav-game">
+                        <p>PLAY AGAIN</p> 
+                    </div>
+                </div>
+                <div class="navigator-leaderboard">
+                    <img class="nav-icon" src="assets\nav-icons\leaderboard-black.png" alt="">
+                    <div class="navigator-expand navigator-leaderboard" id="nav-leaderboard">
+                        <p>CHECK LEADERBOARD</p> 
+                    </div>
+                </div>
+                <div class="navigator-logout">
+                    <img class="nav-icon" src="assets\nav-icons\logout-black.png" alt="">
+                    <div class="navigator-expand navigator-account" id="nav-account">
+                        <p>LOG OUT</p> 
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <form class="leaderboard-box"  action="index.html">
+            <ul id="scores-lists">
+                <li class="col-identifyers">
+                    <span class="index">№</span>
+                    <span class="name">NAME</span>
+                    <span class="time">TIME</span>
+                    <span class="flips">FLIPS</span>
+                </li>
+                <li>
+                    <span class="index">#1</span>
+                    <span class="name">emil2</span>
+                    <span class="time">12:06</span>
+                    <span class="flips">26</span>
+                </li>
+                <li>
+                    <span class="index">#2</span>
+                    <span class="name">emil2</span>
+                    <span class="time">12:06</span>
+                    <span class="flips">26</span>
+                </li>
+                <li>
+                    <span class="index">#3</span>
+                    <span class="name">emilemnqk2</span>
+                    <span class="time">12:06</span>
+                    <span class="flips">26</span>
+                </li>
+                <li>
+                    <span class="index">#1</span>
+                    <span class="name">DannyBro</span>
+                    <span class="time">12:06</span>
+                    <span class="flips">26</span>
+                </li>
+                <li class="curUser">
+                    <span class="index">#1</span>
+                    <span class="name">cantthinkofaname</span>
+                    <span class="time">124:06</span>
+                    <span class="flips">26</span>
+                </li>
+                <li>
+                    <span class="index">#1</span>
+                    <span class="name">emil2</span>
+                    <span class="time">12:06</span>
+                    <span class="flips">26</span>
+                </li>
+                <li>
+                    <span class="index">#1</span>
+                    <span class="name">emil2</span>
+                    <span class="time">12:06</span>
+                    <span class="flips">26</span>
+                </li>
+                
+            </ul>
+           
+        </form>
+
+</body>
+<script src="scripts/navigator.js"></script>
+<script src="scripts/leadboard.js"></script>
+
+
+</html>

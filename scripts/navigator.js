@@ -10,6 +10,10 @@ navGame.addEventListener('click',  event => {
     window.location.href = "game.html"
 })
 
+navLeaderboard.addEventListener('click', event =>{
+    window.location.href = "leaderboard.html"
+})
+
 navAcc.addEventListener('click', event => {
     database.removeItem("currentUser")
     window.location.href = "login.html"
