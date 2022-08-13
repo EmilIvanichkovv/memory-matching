@@ -60,7 +60,15 @@
   transition: 2s;
 }
 
-.memory-card {
+.memory-card:hover {
+  transform: scale(0.9);
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-card-16 {
   position: relative;
   margin: 0.3vw;
   display: flex;
@@ -71,12 +79,15 @@
   transition: transform 1s;
 }
 
-.memory-card:hover {
-  transform: scale(0.9);
-}
-
-.memory-card.flip {
-  transform: rotateY(180deg);
+.memory-card-36 {
+  position: relative;
+  margin: 0.3vw;
+  display: flex;
+  flex: 1 0 14%;
+  width: calc(15% - 10px);
+  height: calc(15% - 10px);
+  transform-style: preserve-3d;
+  transition: transform 1s;
 }
 
 .front-of-card,

@@ -1,22 +1,45 @@
-document.body.onload = addCards;
-
 const cardsBack = "assets/Memory Matching Cards.png";
-const socialMediaImages = [
-  "Facebook",
-  "Google",
-  "Instagram",
-  "LinkedIn",
-  "Snapchat",
-  "Spotify",
-  "Twitter",
-  "YouTube",
-];
+const level = {
+  socialMediaImages: [
+    "Facebook",
+    "Google",
+    "Instagram",
+    "LinkedIn",
+    "Snapchat",
+    "Spotify",
+    "Twitter",
+    "YouTube",
+  ],
+  party: [
+    "balloons",
+    "bday_card",
+    "beer",
+    "cake",
+    "carnaval",
+    "champagne",
+    "cocktail",
+    "firework",
+    "glasses",
+    "invite",
+    "mask",
+    "music_plate",
+    "piano",
+    "popcorn",
+    "rose",
+    "star",
+    "whistle",
+    "xmas_tree",
+  ]
+}
 
-function addSingleCard(name) {
+
+function addSingleCard(name, lvl) {
   // create a new div for memory card
   const divMemoryCard = document.createElement("div");
   divMemoryCard.dataset.socialmedia = name
-  divMemoryCard.classList.add("memory-card");
+  divMemoryCard.classList.add(`memory-card`);
+  divMemoryCard.classList.add(`memory-card-${lvl}`);
+
 
   // and front side of the card
   const imgFrontSide = document.createElement("img");
@@ -39,11 +62,17 @@ function addSingleCard(name) {
   gameBoard.append(divMemoryCard);
 }
 
-function addCards() {
-  socialMediaImages.forEach(element => {
-    addSingleCard(`assets/game_cards/social_media/${element}.png`);
-    addSingleCard(`assets/game_cards/social_media/${element}.png`);
+function addCardsLvl16(lvl) {
+  level.socialMediaImages.forEach(element => {
+    addSingleCard(`assets/game_cards/social_media/${element}.png`, lvl);
+    addSingleCard(`assets/game_cards/social_media/${element}.png`, lvl);
+  });
+}
 
+function addCardsLvl36(lvl) {
+  level.party.forEach(element => {
+    addSingleCard(`assets/game_cards/party/${element}.png`, lvl);
+    addSingleCard(`assets/game_cards/party/${element}.png`, lvl);
   });
 }
 
