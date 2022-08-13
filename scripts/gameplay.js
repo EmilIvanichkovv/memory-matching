@@ -79,7 +79,7 @@ function gameplay() {
     }
     secondCard = this;
     areMatching();
-    if (flippedCards === gameLevel / 2) {
+    if (flippedCards === selectLevel / 2) {
       gameField.classList.add("finished-game");
       afterFinishBoard.classList.remove("hide");
       clearInterval(interval);
