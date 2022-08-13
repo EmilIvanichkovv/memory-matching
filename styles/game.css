@@ -167,7 +167,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(330%, 0%);
+  transform: translate(330%, -100%);
   width: 12vw;
   height: 9vh;
   background-color: black;
@@ -210,4 +210,20 @@
   justify-content: center;
   align-items: center;
   width: 30%;
+}
+
+.restart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(234%, 100%);
+  width: 12vw;
+  height: 9vh;
+  background-color: black;
+  border-radius: 20px;
+  border: 2px solid #6f0420;
+  box-shadow: 0 0 25px #6f0420;
+  opacity: 0.9;
+  animation: pulseShadow 60s linear infinite, pulseText 60s linear infinite;
+  font-size: 1.7em;
 }

@@ -9,6 +9,8 @@ const level16Button = document.getElementById("lvl16-button");
 const level36Button = document.getElementById("lvl36-button");
 const level64Button = document.getElementById("lvl64-button");
 const restartButton = document.getElementById("restart-game");
+const midGameRestartButton = document.getElementById("restart-mid-game");
+
 
 const gameField = document.getElementById("memory-game");
 const afterFinishBoard = document.getElementById("after-finish");
@@ -19,7 +21,6 @@ var resultTimeMessage = document.getElementById("result-time");
 function selectLevel(level, event, button) {
   event.preventDefault();
   const itemParent = button.parentElement.parentElement;
-  console.log(itemParent);
   selectedLevel = level;
   itemParent.classList.add("hide");
   startButton.parentElement.classList.remove("hide");
@@ -132,6 +133,9 @@ function gameplay() {
   restartButton.addEventListener("click", restartGame);
 }
 
+midGameRestartButton.addEventListener("click", (event) => {
+  location.reload();
+});
 // TIMER UTILS
 var interval;
 var seconds = 00;
