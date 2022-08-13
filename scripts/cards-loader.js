@@ -29,6 +29,41 @@ const level = {
     "star",
     "whistle",
     "xmas_tree",
+  ],
+  foods: [
+    "apple",
+    "banana",
+    "burger",
+    "cherry",
+    "chicken_2",
+    "chicken",
+    "cocktail",
+    "coffee",
+    "corn",
+    "croissant",
+    "doner",
+    "doner_shihs",
+    "donut",
+    "eggplant",
+    "fish",
+    "fries",
+    "grape",
+    "hotdog",
+    "icecream_2",
+    "icecream",
+    "noodles",
+    "orange",
+    "pickle",
+    "pineapple",
+    "pizza",
+    "popcorn",
+    "sausage",
+    "soft_drink_2",
+    "soft_drink",
+    "steak",
+    "sushi",
+    "tacos",
+
   ]
 }
 
@@ -39,7 +74,6 @@ function addSingleCard(name, lvl) {
   divMemoryCard.dataset.socialmedia = name
   divMemoryCard.classList.add(`memory-card`);
   divMemoryCard.classList.add(`memory-card-${lvl}`);
-
 
   // and front side of the card
   const imgFrontSide = document.createElement("img");
@@ -73,6 +107,13 @@ function addCardsLvl36(lvl) {
   level.party.forEach(element => {
     addSingleCard(`assets/game_cards/party/${element}.png`, lvl);
     addSingleCard(`assets/game_cards/party/${element}.png`, lvl);
+  });
+}
+
+function addCardsLvl64(lvl) {
+  level.foods.forEach(element => {
+    addSingleCard(`assets/game_cards/foods/${element}.png`, lvl);
+    addSingleCard(`assets/game_cards/foods/${element}.png`, lvl);
   });
 }
 

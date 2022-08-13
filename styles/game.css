@@ -90,6 +90,17 @@
   transition: transform 1s;
 }
 
+.memory-card-64 {
+  position: relative;
+  margin: 0.3vw;
+  display: flex;
+  flex: 1 0 10%;
+  width: calc(12% - 10px);
+  height: calc(12% - 10px);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
 .front-of-card,
 .back-of-card {
   position: absolute;
