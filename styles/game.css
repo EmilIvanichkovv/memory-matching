@@ -118,6 +118,7 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .after-finish-buttons button {
   margin: 15px;
 }
@@ -127,6 +128,7 @@
     opacity: 0;
     transform: scale(0.1);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -147,4 +149,24 @@
   opacity: 0.9;
   animation: pulseShadow 60s linear infinite, pulseText 60s linear infinite;
   font-size: 2em;
+}
+
+.timer-container-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vw;
+}
+
+.timer-seconds {
+  transform: translate(-25%, 0%);
+  display: inline-block;
+  width: 3vw;
+
+}
+
+.timer-tens {
+  transform: translate(25%, 0%);
+  display: inline-block;
+  width: 3vw;
 }
