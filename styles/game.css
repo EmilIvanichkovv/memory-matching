@@ -177,24 +177,37 @@
   opacity: 0.9;
   animation: pulseShadow 60s linear infinite, pulseText 60s linear infinite;
   font-size: 2em;
+
 }
 
 .timer-container-inner {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 7vw;
+  width: 95%;
 }
 
 .timer-seconds {
-  transform: translate(-25%, 0%);
-  display: inline-block;
-  width: 3vw;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
 
 }
 
+.timer-devider {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+
 .timer-tens {
-  transform: translate(25%, 0%);
-  display: inline-block;
-  width: 3vw;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
 }
