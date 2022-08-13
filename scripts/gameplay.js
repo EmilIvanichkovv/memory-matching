@@ -2,16 +2,37 @@ database = window.localStorage;
 const level16 = 16;
 const level36 = 36;
 const level64 = 64;
-
-const gameLevel = level16;
+var selectedLevel = NaN;
 
 const startButton = document.getElementById("start-game");
+const level16Button = document.getElementById("lvl16-button");
+const level36Button = document.getElementById("lvl36-button");
+const level64Button = document.getElementById("lvl64-button");
 const restartButton = document.getElementById("restart-game");
+
 const gameField = document.getElementById("memory-game");
 const afterFinishBoard = document.getElementById("after-finish");
 var welcomeText = document.getElementById("wellcoming");
 welcomeText.textContent += " " + database.getItem("currentUser") + "?";
 var resultTimeMessage = document.getElementById("result-time");
+
+function selectLevel(level, event, button) {
+  event.preventDefault();
+  const itemParent = button.parentElement.parentElement;
+  console.log(itemParent);
+  selectedLevel = level;
+  itemParent.classList.add("hide");
+  startButton.parentElement.classList.remove("hide");
+}
+level16Button.addEventListener("click", (event) => {
+  selectLevel(level16, event, level16Button);
+});
+level36Button.addEventListener("click", (event) => {
+  selectLevel(level36, event, level36Button);
+});
+level64Button.addEventListener("click", (event) => {
+  selectLevel(level64, event, level64Button);
+});
 
 startButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -23,7 +44,10 @@ startButton.addEventListener("click", (event) => {
 });
 
 function prepareBoard() {
-  const cardsOnBoard = document.querySelectorAll(".memory-card");
+  loadAllCards(selectedLevel);
+  const cardsOnBoard = document.querySelectorAll(
+    `.memory-card-${selectedLevel}`
+  );
 
   (function shuffleCards() {
     cardsOnBoard.forEach((card) => {

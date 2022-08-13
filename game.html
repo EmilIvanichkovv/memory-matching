@@ -48,7 +48,15 @@
         </div>
 
         <form class="game-box" action="index.html">
-            <div class="start-game">
+            <div class="select-level">
+                <p id="level-selection">PLEASE SELECT LEVEL</p>
+                <div class="lvl-button">
+                    <button class="neonBoxes" id="lvl16-button">4X4</button>
+                    <button class="neonBoxes" id="lvl36-button">6X6</button>
+                    <button class="neonBoxes" id="lvl64-button">8X8</button>
+                </div>
+            </div>
+            <div class="start-game hide">
                 <p id="wellcoming">READY TO PLAY</p>
                 <button class="neonBoxes" id="start-game">START</button>
             </div>
@@ -66,7 +74,11 @@
             </div>
         </form>
         <div class="timer-container">
-            <div class="timer-container-inner"><div class="timer-seconds" id="seconds">00</div> <div>:</div> <div class="time timer-tens" id="tens">00</div></div>
+            <div class="timer-container-inner">
+                <div class="timer-seconds" id="seconds">00</div>
+                <div>:</div>
+                <div class="time timer-tens" id="tens">00</div>
+            </div>
         </div>
     </div>
 

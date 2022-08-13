@@ -1,5 +1,5 @@
 const cardsBack = "assets/Memory Matching Cards.png";
-const level = {
+const levels = {
   socialMediaImages: [
     "Facebook",
     "Google",
@@ -63,15 +63,13 @@ const level = {
     "steak",
     "sushi",
     "tacos",
+  ],
+};
 
-  ]
-}
-
-
-function addSingleCard(name, lvl) {
+function loadSingleCard(name, lvl) {
   // create a new div for memory card
   const divMemoryCard = document.createElement("div");
-  divMemoryCard.dataset.socialmedia = name
+  divMemoryCard.dataset.socialmedia = name;
   divMemoryCard.classList.add(`memory-card`);
   divMemoryCard.classList.add(`memory-card-${lvl}`);
 
@@ -96,24 +94,27 @@ function addSingleCard(name, lvl) {
   gameBoard.append(divMemoryCard);
 }
 
-function addCardsLvl16(lvl) {
-  level.socialMediaImages.forEach(element => {
-    addSingleCard(`assets/game_cards/social_media/${element}.png`, lvl);
-    addSingleCard(`assets/game_cards/social_media/${element}.png`, lvl);
-  });
+function loadAllCards(lvl) {
+  switch (lvl) {
+    case 16:
+      levels.socialMediaImages.forEach((element) => {
+        loadSingleCard(`assets/game_cards/social_media/${element}.png`, lvl);
+        loadSingleCard(`assets/game_cards/social_media/${element}.png`, lvl);
+      });
+      break;
+    case 36:
+      levels.party.forEach((element) => {
+        loadSingleCard(`assets/game_cards/party/${element}.png`, lvl);
+        loadSingleCard(`assets/game_cards/party/${element}.png`, lvl);
+      });
+      break;
+    case 64:
+      levels.foods.forEach((element) => {
+        loadSingleCard(`assets/game_cards/foods/${element}.png`, lvl);
+        loadSingleCard(`assets/game_cards/foods/${element}.png`, lvl);
+      });
+      break;
+    default:
+      console.log(`Sorry, incorrect lvl: ${lvl}.`);
+  }
 }
-
-function addCardsLvl36(lvl) {
-  level.party.forEach(element => {
-    addSingleCard(`assets/game_cards/party/${element}.png`, lvl);
-    addSingleCard(`assets/game_cards/party/${element}.png`, lvl);
-  });
-}
-
-function addCardsLvl64(lvl) {
-  level.foods.forEach(element => {
-    addSingleCard(`assets/game_cards/foods/${element}.png`, lvl);
-    addSingleCard(`assets/game_cards/foods/${element}.png`, lvl);
-  });
-}
-
