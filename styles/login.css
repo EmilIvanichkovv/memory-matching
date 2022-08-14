@@ -11,6 +11,10 @@ h1 {
   color: white;
 }
 
+.navigator{
+  transform: translate(0%, 90%);
+}
+
 .container {
   width: 40vw;
   height: 50vh;

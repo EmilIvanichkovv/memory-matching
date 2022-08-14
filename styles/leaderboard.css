@@ -27,12 +27,6 @@ span.name {
   width: 20vw;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .leaderboard-box {
   width: 60vw;
   height: 37vw;

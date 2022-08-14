@@ -2,7 +2,7 @@ database = window.localStorage;
 
 const navGame = document.getElementById("nav-game");
 const navLeaderboard = document.getElementById("nav-leaderboard");
-const navAcc = document.getElementById("nav-account");
+const navAcc = document.getElementById("nav-logout");
 
 navGame.addEventListener("click", (event) => {
   if (database.getItem("currentUser") === "") return;
