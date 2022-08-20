@@ -80,7 +80,7 @@ function gameplay() {
     }
     secondCard = this;
     areMatching();
-    if (flippedCards === selectLevel / 2) {
+    if (flippedCards === selectedLevel / 2) {
       gameField.classList.add("finished-game");
       afterFinishBoard.classList.remove("hide");
       clearInterval(interval);
