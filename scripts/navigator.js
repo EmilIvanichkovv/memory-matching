@@ -1,11 +1,9 @@
-database = window.localStorage;
-
 const navGame = document.getElementById("nav-game");
 const navLeaderboard = document.getElementById("nav-leaderboard");
 const navAcc = document.getElementById("nav-logout");
 
 navGame.addEventListener("click", (event) => {
-  if (database.getItem("currentUser") === "") return;
+  if (window.localStorage.getItem("currentUser") === "") return;
   window.location.href = "game.html";
 });
 
@@ -14,6 +12,6 @@ navLeaderboard.addEventListener("click", (event) => {
 });
 
 navAcc.addEventListener("click", (event) => {
-  database.removeItem("currentUser");
+  window.localStorage.removeItem("currentUser");
   window.location.href = "login.html";
 });
