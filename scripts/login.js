@@ -36,9 +36,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const dataRef = ref(database, "users/");
-
-// Session storage
+const usersDataRef = ref(database, "users/");
 
 // COMMON UTILS
 function setError(item, message) {
@@ -114,7 +112,7 @@ async function getUsername(email) {
 
 // Write new user to the database
 function writeNewUserData(username, email, password) {
-  const newUserRef = push(dataRef);
+  const newUserRef = push(usersDataRef);
   const userId = newUserRef.key;
   set(ref(database, "users/" + userId), {
     email: email,
