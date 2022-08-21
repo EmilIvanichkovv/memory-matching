@@ -1,4 +1,91 @@
-database = window.localStorage;
+// // Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+import {
+  getDatabase,
+  child,
+  get,
+  ref,
+  push,
+  set,
+  update,
+} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCiugbpO2Tid9-9SGS8zw0_PW2obxlPFA0",
+  authDomain: "memorymatchinggame.firebaseapp.com",
+  projectId: "memorymatchinggame",
+  storageBucket: "memorymatchinggame.appspot.com",
+  messagingSenderId: "495458129080",
+  appId: "1:495458129080:web:64279c6b1841698122904d",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const leaderboardDataRef = ref(database, "leaderboard/");
+
+// Get result data for some username
+async function getUserResultByUsername(username) {
+  const dbRef = ref(database);
+  const temp = await get(child(dbRef, "leaderboard/"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        for (var resultId in snapshot.val()) {
+          if (snapshot.val()[resultId].username === username) {
+            return { id: resultId, value: snapshot.val()[resultId] };
+          }
+        }
+        return false;
+      } else {
+        console.log("There is no data for 'leaderboard'");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  return temp;
+}
+
+// Write current user result to the database
+function writeUserResultData(username, seconds, tens, flips) {
+  const userResultRef = push(leaderboardDataRef);
+  const userResultId = userResultRef.key;
+  set(ref(database, "leaderboard/" + userResultId), {
+    username: username,
+    seconds: seconds,
+    tens: tens,
+    flips: flips,
+  })
+    .then(() => {})
+    .catch((error) => {});
+  return userResultRef.key;
+}
+
+function writeUserResultIfBetter(username, seconds, tens, flips) {
+  const prevUserResult = getUserResultByUsername(username).then(function (
+    result
+  ) {
+    if (result != false) {
+      if (
+        seconds < result.value.seconds ||
+        (seconds == result.value.seconds && tens < result.value.tens)
+      ) {
+        const updateResult = {};
+        updateResult["leaderboard/" + result.id] = {
+          username: username,
+          seconds: seconds,
+          tens: tens,
+          flips: flips,
+        };
+        update(ref(database), updateResult);
+      }
+    } else {
+      writeUserResultData(username, seconds, tens, flips);
+    }
+  });
+}
+
 const level16 = 16;
 const level36 = 36;
 const level64 = 64;
@@ -9,13 +96,14 @@ const level16Button = document.getElementById("lvl16-button");
 const level36Button = document.getElementById("lvl36-button");
 const level64Button = document.getElementById("lvl64-button");
 const restartButton = document.getElementById("restart-game");
+const leaderboardButton = document.getElementById("leaderboard");
 const midGameRestartButton = document.getElementById("restart-mid-game");
-
 
 const gameField = document.getElementById("memory-game");
 const afterFinishBoard = document.getElementById("after-finish");
 var welcomeText = document.getElementById("wellcoming");
-welcomeText.textContent += " " + database.getItem("currentUser") + "?";
+welcomeText.textContent +=
+  " " + window.localStorage.getItem("currentUser") + "?";
 var resultTimeMessage = document.getElementById("result-time");
 
 function selectLevel(level, event, button) {
@@ -80,12 +168,13 @@ function gameplay() {
     }
     secondCard = this;
     areMatching();
-    if (flippedCards === selectLevel / 2) {
+    if (flippedCards === selectedLevel / 2) {
       gameField.classList.add("finished-game");
       afterFinishBoard.classList.remove("hide");
       clearInterval(interval);
-      const currenTime = seconds + ":" + tens;
-      resultTimeMessage.textContent += " " + currenTime;
+      const currentTime = seconds + ":" + tens;
+      writeUserResultIfBetter(window.localStorage.currentUser, seconds, tens, 42);
+      resultTimeMessage.textContent += " " + currentTime;
     }
   }
 
@@ -124,13 +213,19 @@ function gameplay() {
     secondCard = null;
   }
 
-  function restartGame() {
+  function restartGame(event) {
     event.preventDefault();
     location.reload();
   }
 
+  function gotoLeaderboard(event) {
+    event.preventDefault();
+    window.location.href = "leaderboard.html";
+  }
+
   cards.forEach((card) => card.addEventListener("click", flipCard));
   restartButton.addEventListener("click", restartGame);
+  leaderboardButton.addEventListener("click", gotoLeaderboard);
 }
 
 midGameRestartButton.addEventListener("click", (event) => {
@@ -138,8 +233,8 @@ midGameRestartButton.addEventListener("click", (event) => {
 });
 // TIMER UTILS
 var interval;
-var seconds = 00;
-var tens = 00;
+var seconds = "00";
+var tens = "00";
 var timerSeconds = document.getElementById("seconds");
 var timerTens = document.getElementById("tens");
 
