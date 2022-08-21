@@ -96,6 +96,7 @@ const level16Button = document.getElementById("lvl16-button");
 const level36Button = document.getElementById("lvl36-button");
 const level64Button = document.getElementById("lvl64-button");
 const restartButton = document.getElementById("restart-game");
+const leaderboardButton = document.getElementById("leaderboard");
 const midGameRestartButton = document.getElementById("restart-mid-game");
 
 const gameField = document.getElementById("memory-game");
@@ -212,13 +213,19 @@ function gameplay() {
     secondCard = null;
   }
 
-  function restartGame() {
+  function restartGame(event) {
     event.preventDefault();
     location.reload();
   }
 
+  function gotoLeaderboard(event) {
+    event.preventDefault();
+    window.location.href = "leaderboard.html";
+  }
+
   cards.forEach((card) => card.addEventListener("click", flipCard));
   restartButton.addEventListener("click", restartGame);
+  leaderboardButton.addEventListener("click", gotoLeaderboard);
 }
 
 midGameRestartButton.addEventListener("click", (event) => {
