@@ -70,7 +70,7 @@ function writeUserResultIfBetter(level, username, seconds, tens, flips) {
           (seconds == result.value.seconds && tens < result.value.tens)
         ) {
           const updateResult = {};
-          updateResult["leaderboard/" + result.id] = {
+          updateResult[`leaderboard${level}/` + result.id] = {
             username: username,
             seconds: seconds,
             tens: tens,
