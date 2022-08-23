@@ -26,7 +26,7 @@
     <div class="content">
         <nav class=" navigator neonBoxes">
             <ul class="navbar-nav">
-                <li class="nav-element" id="nav-game" >
+                <li class="nav-element" id="nav-game">
                     <img class="nav-icon" src="assets\nav-icons\game-black.png" alt="">
                     <span class="nav-text">PLAY AGAIN</span>
                 </li>
@@ -40,15 +40,28 @@
                 </li>
             </ul>
         </nav>
+
         <form class="leaderboard-box" action="index.html">
-            <ul id="scores-lists">
-                <li class="col-identifyers">
-                    <span class="index">№</span>
-                    <span class="name">NAME</span>
-                    <span class="time">TIME</span>
-                    <span class="flips">FLIPS</span>
-                </li>
-            </ul>
+
+            <div class="select-level">
+                <p id="level-selection">PLEASE SELECT LEVEL </p>
+                <div class="lvl-button">
+                    <button class="neonBoxes" id="lvl16-button">4X4</button>
+                    <button class="neonBoxes" id="lvl36-button">6X6</button>
+                    <button class="neonBoxes" id="lvl64-button">8X8</button>
+                </div>
+            </div>
+            <div class="scores-lists hide" id="scores-lists-div">
+                <ul id="scores-lists">
+                    <li class="col-identifyers">
+                        <span class="index">№</span>
+                        <span class="name">NAME</span>
+                        <span class="time">TIME</span>
+                        <span class="flips">FLIPS</span>
+                    </li>
+                </ul>
+            </div>
+
 
         </form>
 
