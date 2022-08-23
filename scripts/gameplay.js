@@ -23,12 +23,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const leaderboardDataRef = ref(database, "leaderboard/");
 
 // Get result data for some username
-async function getUserResultByUsername(username) {
+async function getUserResultByUsername(level, username) {
   const dbRef = ref(database);
-  const temp = await get(child(dbRef, "leaderboard/"))
+  const temp = await get(child(dbRef, `leaderboard${level}/`))
     .then((snapshot) => {
       if (snapshot.exists()) {
         for (var resultId in snapshot.val()) {
@@ -48,10 +47,10 @@ async function getUserResultByUsername(username) {
 }
 
 // Write current user result to the database
-function writeUserResultData(username, seconds, tens, flips) {
-  const userResultRef = push(leaderboardDataRef);
+function writeUserResultData(level, username, seconds, tens, flips) {
+  const userResultRef = push(ref(database, `leaderboard${level}/`));
   const userResultId = userResultRef.key;
-  set(ref(database, "leaderboard/" + userResultId), {
+  set(ref(database, `leaderboard${level}/` + userResultId), {
     username: username,
     seconds: seconds,
     tens: tens,
@@ -62,28 +61,28 @@ function writeUserResultData(username, seconds, tens, flips) {
   return userResultRef.key;
 }
 
-function writeUserResultIfBetter(username, seconds, tens, flips) {
-  const prevUserResult = getUserResultByUsername(username).then(function (
-    result
-  ) {
-    if (result != false) {
-      if (
-        seconds < result.value.seconds ||
-        (seconds == result.value.seconds && tens < result.value.tens)
-      ) {
-        const updateResult = {};
-        updateResult["leaderboard/" + result.id] = {
-          username: username,
-          seconds: seconds,
-          tens: tens,
-          flips: flips,
-        };
-        update(ref(database), updateResult);
+function writeUserResultIfBetter(level, username, seconds, tens, flips) {
+  const prevUserResult = getUserResultByUsername(level, username).then(
+    function (result) {
+      if (result != false) {
+        if (
+          seconds < result.value.seconds ||
+          (seconds == result.value.seconds && tens < result.value.tens)
+        ) {
+          const updateResult = {};
+          updateResult["leaderboard/" + result.id] = {
+            username: username,
+            seconds: seconds,
+            tens: tens,
+            flips: flips,
+          };
+          update(ref(database), updateResult);
+        }
+      } else {
+        writeUserResultData(level, username, seconds, tens, flips);
       }
-    } else {
-      writeUserResultData(username, seconds, tens, flips);
     }
-  });
+  );
 }
 
 const level16 = 16;
@@ -168,15 +167,22 @@ function gameplay() {
       return;
     }
     secondCard = this;
-    flipsCounter ++;
+    flipsCounter++;
     areMatching();
     if (flippedCards === selectedLevel / 2) {
       gameField.classList.add("finished-game");
       afterFinishBoard.classList.remove("hide");
       clearInterval(interval);
       const currentTime = seconds + ":" + tens;
-      writeUserResultIfBetter(window.localStorage.currentUser, seconds, tens, flipsCounter);
-      resultTimeMessage.textContent += " " + currentTime + " and " + flipsCounter +" flips";
+      writeUserResultIfBetter(
+        selectedLevel,
+        window.localStorage.currentUser,
+        seconds,
+        tens,
+        flipsCounter
+      );
+      resultTimeMessage.textContent +=
+        " " + currentTime + " and " + flipsCounter + " flips";
     }
   }
 
