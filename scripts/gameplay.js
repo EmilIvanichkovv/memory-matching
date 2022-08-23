@@ -140,7 +140,7 @@ function prepareBoard() {
 
   (function shuffleCards() {
     cardsOnBoard.forEach((card) => {
-      let randomPos = Math.floor(Math.random() * level16);
+      let randomPos = Math.floor(Math.random() * selectedLevel);
       card.style.order = randomPos;
     });
   })();
@@ -154,6 +154,7 @@ function gameplay() {
   let hasFlippedCard = false;
   let boardLock = false;
   let firstCard, secondCard;
+  var flipsCounter = 0;
 
   function flipCard() {
     if (boardLock) return;
@@ -167,14 +168,15 @@ function gameplay() {
       return;
     }
     secondCard = this;
+    flipsCounter ++;
     areMatching();
     if (flippedCards === selectedLevel / 2) {
       gameField.classList.add("finished-game");
       afterFinishBoard.classList.remove("hide");
       clearInterval(interval);
       const currentTime = seconds + ":" + tens;
-      writeUserResultIfBetter(window.localStorage.currentUser, seconds, tens, 42);
-      resultTimeMessage.textContent += " " + currentTime;
+      writeUserResultIfBetter(window.localStorage.currentUser, seconds, tens, flipsCounter);
+      resultTimeMessage.textContent += " " + currentTime + " and " + flipsCounter +" flips";
     }
   }
 
